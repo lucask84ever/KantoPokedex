@@ -15,6 +15,6 @@ final class PokemonDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("APARECI")
+        pokemonNameLabel.text = "\(pokemon.pokemon_species.name.capitalized)"
     }
 }

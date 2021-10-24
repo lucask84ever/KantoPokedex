@@ -46,15 +46,60 @@
                             <constraint firstItem="i0O-4J-CEN" firstAttribute="bottom" secondItem="rd4-ut-l4j" secondAttribute="bottom" id="o6H-Ta-DUq"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Pokemons" image="circle.fill" catalog="system" id="L5T-Jh-Elt"/>
+                    <tabBarItem key="tabBarItem" title="Pokemons" image="poke" selectedImage="pokeFilled" id="L5T-Jh-Elt"/>
                     <navigationItem key="navigationItem" id="Ah2-ou-rNr"/>
                     <connections>
                         <outlet property="pokemonsTableView" destination="rd4-ut-l4j" id="0P4-8c-xTj"/>
+                        <segue destination="B1j-Jt-JQx" kind="showDetail" identifier="detailPokemon" id="mcl-Kv-PHT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="941-V5-82Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-736" y="-17"/>
+        </scene>
+        <!--Pokemon Detail View Controller-->
+        <scene sceneID="OJx-7F-VhD">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4f4-fZ-h3O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="DetailedPokemon" id="B1j-Jt-JQx" customClass="PokemonDetailViewController" customModule="KantoPokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lXr-RR-VyK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ulm-GN-FSU">
+                                <rect key="frame" x="87" y="40" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="SC6-pZ-X7y"/>
+                                    <constraint firstAttribute="width" constant="240" id="VA4-4O-xyu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYk-92-AwH">
+                                <rect key="frame" x="20" y="296" width="374" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="bP8-zi-Cnf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hTD-kO-5MN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mYk-92-AwH" firstAttribute="top" secondItem="ulm-GN-FSU" secondAttribute="bottom" constant="16" id="NJO-Az-5CZ"/>
+                            <constraint firstItem="mYk-92-AwH" firstAttribute="leading" secondItem="hTD-kO-5MN" secondAttribute="leading" constant="20" id="eks-7d-gdo"/>
+                            <constraint firstItem="ulm-GN-FSU" firstAttribute="centerX" secondItem="lXr-RR-VyK" secondAttribute="centerX" id="nT6-67-FKU"/>
+                            <constraint firstItem="ulm-GN-FSU" firstAttribute="top" secondItem="hTD-kO-5MN" secondAttribute="top" constant="40" id="qha-IU-lj6"/>
+                            <constraint firstItem="hTD-kO-5MN" firstAttribute="trailing" secondItem="mYk-92-AwH" secondAttribute="trailing" constant="20" id="z4g-oL-rOX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pokemonImageView" destination="ulm-GN-FSU" id="u2z-pr-BVz"/>
+                        <outlet property="pokemonNameLabel" destination="mYk-92-AwH" id="vxA-4y-79f"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="310" y="-17"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="b0y-m6-a30">
@@ -76,8 +121,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="poke" width="25" height="25"/>
+        <image name="pokeFilled" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

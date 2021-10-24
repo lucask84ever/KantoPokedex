@@ -10,7 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     // MARK: IBOutlets
     @IBOutlet weak var pokemonsTableView: UITableView!
-    var viewModel: PokedexViewModel?
+    var viewModel: PokedexViewModel!
+    var model: Pokemon?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -36,8 +37,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = ("\(indexPath.row + 1) - " + (viewModel?.getPokemons()[indexPath.row].pokemon_species.name ?? ""))
+        cell.textLabel?.text = "\(viewModel.getPokemons()[indexPath.row].id) - " + viewModel.getPokemons()[indexPath.row].pokemon_species.name.capitalized
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        model = viewModel.getPokemons()[indexPath.row]
+        performSegue(withIdentifier: "detailPokemon", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detail = segue.destination as! PokemonDetailViewController
+        detail.pokemon = model
     }
 }
 

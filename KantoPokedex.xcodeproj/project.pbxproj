@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		F3104F762724E6CD005219EE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3104F752724E6CD005219EE /* Endpoint.swift */; };
 		F3104F782724EEE7005219EE /* Pokedex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3104F772724EEE7005219EE /* Pokedex.swift */; };
 		F3104F7B2724F675005219EE /* PokedexViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3104F7A2724F675005219EE /* PokedexViewModel.swift */; };
+		F3D9274B2725945F00F9F680 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F3D9274A2725945F00F9F680 /* SDWebImage */; };
+		F3D9275027259CAF00F9F680 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = F3D9274F27259CAF00F9F680 /* SkeletonView */; };
+		F3D9275227259CF100F9F680 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D9275127259CF000F9F680 /* PokemonDetailViewController.swift */; };
 		F3F3D6FA2724D6A3008EAE0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3D6F92724D6A3008EAE0E /* AppDelegate.swift */; };
 		F3F3D6FC2724D6A3008EAE0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3D6FB2724D6A3008EAE0E /* SceneDelegate.swift */; };
 		F3F3D6FE2724D6A3008EAE0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3D6FD2724D6A3008EAE0E /* ViewController.swift */; };
@@ -33,6 +36,7 @@
 		F3104F752724E6CD005219EE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		F3104F772724EEE7005219EE /* Pokedex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokedex.swift; sourceTree = "<group>"; };
 		F3104F7A2724F675005219EE /* PokedexViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexViewModel.swift; sourceTree = "<group>"; };
+		F3D9275127259CF000F9F680 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 		F3F3D6F62724D6A3008EAE0E /* KantoPokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KantoPokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F3D6F92724D6A3008EAE0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3F3D6FB2724D6A3008EAE0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3D9275027259CAF00F9F680 /* SkeletonView in Frameworks */,
+				F3D9274B2725945F00F9F680 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +124,7 @@
 				F3F3D6FD2724D6A3008EAE0E /* ViewController.swift */,
 				F3F3D7072724D6A4008EAE0E /* LaunchScreen.storyboard */,
 				F3F3D6FF2724D6A3008EAE0E /* Main.storyboard */,
+				F3D9275127259CF000F9F680 /* PokemonDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +173,10 @@
 			dependencies = (
 			);
 			name = KantoPokedex;
+			packageProductDependencies = (
+				F3D9274A2725945F00F9F680 /* SDWebImage */,
+				F3D9274F27259CAF00F9F680 /* SkeletonView */,
+			);
 			productName = KantoPokedex;
 			productReference = F3F3D6F62724D6A3008EAE0E /* KantoPokedex.app */;
 			productType = "com.apple.product-type.application";
@@ -193,6 +204,10 @@
 				Base,
 			);
 			mainGroup = F3F3D6ED2724D6A3008EAE0E;
+			packageReferences = (
+				F3D927492725945F00F9F680 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				F3D9274E27259CAF00F9F680 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+			);
 			productRefGroup = F3F3D6F72724D6A3008EAE0E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -220,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3D9275227259CF100F9F680 /* PokemonDetailViewController.swift in Sources */,
 				F3104F6B2724D958005219EE /* Pokemon.swift in Sources */,
 				F3F3D6FE2724D6A3008EAE0E /* ViewController.swift in Sources */,
 				F3F3D6FA2724D6A3008EAE0E /* AppDelegate.swift in Sources */,
@@ -433,6 +449,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3D927492725945F00F9F680 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.12.1;
+			};
+		};
+		F3D9274E27259CAF00F9F680 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.25.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3D9274A2725945F00F9F680 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3D927492725945F00F9F680 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		F3D9274F27259CAF00F9F680 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3D9274E27259CAF00F9F680 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F3F3D7022724D6A3008EAE0E /* KantoPokedex.xcdatamodeld */ = {
