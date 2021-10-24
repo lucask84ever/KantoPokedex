@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     // MARK: IBOutlets
     @IBOutlet weak var pokemonsTableView: UITableView!
     var viewModel: PokedexViewModel!
-    var model: Pokemon?
+    var model: ListedPokemon?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

@@ -7,7 +7,11 @@
 
 import Foundation
 
+struct TypeObject: Codable {
+    let slot: Int
+    let type: Type
+}
+
 struct Type: Codable {
-    let id: Int
     let name: String
 }

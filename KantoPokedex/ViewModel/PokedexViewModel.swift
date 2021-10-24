@@ -28,7 +28,7 @@ class PokedexViewModel {
         }
     }
     
-    func getPokemons() -> [Pokemon] {
+    func getPokemons() -> [ListedPokemon] {
         return pokedex?.pokemons ?? []
     }
     

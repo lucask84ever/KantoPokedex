@@ -8,7 +8,7 @@
 import Foundation
 
 struct Pokedex: Codable {
-    var pokemons: [Pokemon]
+    var pokemons: [ListedPokemon]
 }
 
 extension Pokedex {
